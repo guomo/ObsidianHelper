@@ -59,13 +59,13 @@ def prompt_dest_dir(prompt):
 
     while not p:
         # Get the directory to store the file in
-        working_dir = input(prompt)
+        working_dir = input(f"\033[1;35;40m{prompt}\033[1;32;40m")
         # on unix systems users can specify their home dir with alias ~, expand if need be; resolve is in case there are symlinks
         p = Path(working_dir).expanduser().resolve() 
         # Check for existance and write permissions 
         if not os.path.exists(p):
             print("That directory does not exist.")
-            mkdir = input("Would you like to to create it [y/n]?")
+            mkdir = input("\033[1;35;40mWould you like to to create it [y/n]?\033[1;32;40m")
             if mkdir.lower().startswith('y'):
                 try:
                     os.makedirs(p)
@@ -84,20 +84,20 @@ def prompt_dest_dir(prompt):
 
 
 def prompt_course_details():
-    id = input("Avoiding the use of colons, slashes, and asterisks, what is the id of the course? ")
+    id = input("\033[1;35;40mAvoiding the use of colons, slashes, and asterisks, what is the id of the course? \033[1;32;40m")
     done = False
     while not done:
         try:
-            weeks = input("how many weeks for the course?")
+            weeks = input("\033[1;35;40mHow many weeks for the course? \033[1;32;40m")
             weeks = utils.str_as_number(weeks)
             done = True
         except:
-            print("You must enter a valid integer...Try again.")
-    title = input("What is the full title of the course, e.g. History of the United States from 1600-1820? ")
-    name = input("What is a short name for the course, e.g. History, Biology, Bible, etc.? ")
-    prof = input("What is Professor's name (with Dr. if applicable)? ")
-    times = input("Tell us the days and times it meets (room is optional): ")
-    zoom = input("Enter the zoom link (return if none): ")
+            print("\033[1;31;40mYou must enter a valid integer...Try again.\033[1;32;40m ")
+    title = input("\033[1;35;40mWhat is the full title of the course, e.g. History of the United States from 1600-1820? \033[1;32;40m")
+    name = input("\033[1;35;40mWhat is a short name for the course, e.g. History, Biology, Bible, etc.? \033[1;32;40m")
+    prof = input("\033[1;35;40mWhat is Professor's name (with Dr. if applicable)? \033[1;32;40m")
+    times = input("\033[1;35;40mTell us the days and times it meets (room is optional): \033[1;32;40m")
+    zoom = input("\033[1;35;40mEnter the zoom link (return if none): \033[1;32;40m")
 
     # Create the class 
     newCourse = CourseDetails(id, name, title, prof, times, zoom, weeks)
@@ -122,7 +122,7 @@ def make_dirs(base, course : CourseDetails):
         os.mkdir(weekDir)
         
         # Create the weekly markdown file for the course
-        weekMarkdownFile = weekDir.joinpath(f"{course.courseId}—Assigments_W{i+1}.md")
+        weekMarkdownFile = weekDir.joinpath(f"{course.courseId}—Assigmnents_W{i+1}.md")
         populate_template(TemplateType.WEEKLY_TEMPL, weekMarkdownFile, course)
     
 
