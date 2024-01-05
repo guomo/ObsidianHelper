@@ -122,7 +122,7 @@ def make_dirs(base, course : CourseDetails):
         os.mkdir(weekDir)
         
         # Create the weekly markdown file for the course
-        weekMarkdownFile = weekDir.joinpath(f"{course.courseId}—Assigmnents_W{i+1}.md")
+        weekMarkdownFile = weekDir.joinpath(f"{course.courseId}—Assignments_W{i+1}.md")
         populate_template(TemplateType.WEEKLY_TEMPL, weekMarkdownFile, course)
     
 
@@ -163,7 +163,7 @@ def populate_template(template : TemplateType, file, course: CourseDetails):
 ######## MAIN
 
 if __name__ == "__main__":
-    dest_dir = prompt_dest_dir("What directory would you like to the course in? ")
+    dest_dir = prompt_dest_dir("What directory would you like to put the generated course in (you can move this later)? ")
     course_info = prompt_course_details()
     make_dirs(dest_dir, course_info)
     copy_templates(dest_dir)

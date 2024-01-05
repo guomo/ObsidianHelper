@@ -1,6 +1,6 @@
 
 ### Introduction
-ObisidianHelper is script that will help create repetitive and useful hiearchies for you obisdian note taking tool. As of this release it is focused on making a hierarchy suitable for a typical college course. You specifiy some basic info, and the helper will create the course folders, put a bare-bones structure for each week, and also install some templates for obisidean for things like book reading notes and written assignment brainstorming and draft writing. 
+ObisidianHelper is script that will help create repetitive and useful hierarchies for you obisdian note taking tool. As of this release it is focused on making a hierarchy suitable for a typical college course. You specifiy some basic info, and the helper will create the course folders, put a bare-bones structure for each week, and also install some templates for Obsidian for things like book reading notes and written assignment brainstorming and draft writing. 
 
 ![Screen shot](img/HelperOutput.png "Sample output")
 
@@ -17,7 +17,7 @@ The application will run and ask you a series of questions about your course. Be
 
 ### Example Creation of A Semester of Folders
 ```
-What directory would you like to the course in? /tmp/GF
+What directory would you like to put the generated course in (you can move this later)? /tmp/GF
 Avoiding the use of colons, slashes, and asterisks, what is the id of the course? CHTH562
 how many weeks for the course?16
 What is the full title of the course, e.g. History of the United States from 1600-1820? History of Cheese
