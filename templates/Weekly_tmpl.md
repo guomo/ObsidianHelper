@@ -1,13 +1,18 @@
-## {{courseId}} — {{courseTitle}}
+> [!this-week-in-class]- {{courseTitle}}
+> | {{courseId}} | {{courseTitle}}  | Zoom         |
+| ------------ | ---------------- | ------------ |
+| Meets        | {{meetingTimes}} | {{zoomLink}} |
+*With {{professor}}*
+
+----
+### 📚 Reading & Media
+
+### 💬 Discussion Posts
+
+### 📥 This Week’s Assignments
+
 ---
-#### **With {{professor}}**
-##### Meeting Times: Class meets on {{meetingTimes}}
-##### Zoom Link: {{zoomLink}}
----
-### Reading & Media
-
-### Discussions
-
-### This Week’s Assignments
-
 ### Project/Capstone/Term Paper Work This Week
+
+----
+### Lecture Notes/Slides:

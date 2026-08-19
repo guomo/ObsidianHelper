@@ -39,7 +39,7 @@ class CourseDetails :
         self.shortName = shortName
         self.meetingCnt = numWeeks
         if not zoom:
-            self.zoom = "This course either meets in person or there are no virtual meetings."
+            self.zoom = "This course either meets in person or purely online."
         else:
             self.zoom = zoom
 
@@ -122,7 +122,7 @@ def make_dirs(base, course : CourseDetails):
         os.mkdir(weekDir)
         
         # Create the weekly markdown file for the course
-        weekMarkdownFile = weekDir.joinpath(f"{course.courseId}—Assignments_W{i+1}.md")
+        weekMarkdownFile = weekDir.joinpath(f"{course.courseId}—Module {i+1}.md")
         populate_template(TemplateType.WEEKLY_TEMPL, weekMarkdownFile, course)
     
 
